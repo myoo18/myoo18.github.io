@@ -1,103 +1,132 @@
-@media screen and (max-width: 1400px) {
+/* ============================================================
+   TABLET  (≤ 1100px)
+   ============================================================ */
+@media screen and (max-width: 1100px) {
+  section { padding: 4.5rem 6%; }
+
   #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
+    gap: 3rem;
   }
-  .about-containers {
-    flex-wrap: wrap;
-  }
-  #contact,
-  #projects {
-    height: fit-content;
-  }
-}
 
-@media screen and (max-width: 1200px) {
-  #desktop-nav {
-    display: none;
+  .section__pic-container img {
+    width: 250px;
+    height: 250px;
   }
-  #hamburger-nav {
-    display: flex;
-  }
-  #experience,
-  .experience-details-container {
-    margin-top: 2rem;
-  }
-  #profile,
-  .section-container {
-    display: block;
-  }
-  .arrow {
-    display: none;
-  }
-  section,
-  .section-container {
-    height: fit-content;
-  }
-  section {
-    margin: 0 5%;
-  }
-  .section__pic-container {
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
-  }
-  .about-containers {
-    margin-top: 0;
-  }
-}
 
-@media screen and (max-width: 600px) {
-  #contact,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   footer {
-    height: 40vh;
-  }
-  #profile {
-    height: 83vh;
-    margin-bottom: 0;
-  }
-  article {
-    font-size: 1rem;
-  }
-  footer nav {
-    height: fit-content;
-    margin-bottom: 2rem;
-  }
-  .about-containers,
-  .contact-info-upper-container,
-  .btn-container {
-    flex-wrap: wrap;
-  }
-  .contact-info-container {
-    margin: 0;
-  }
-  .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
-  }
-  .experience-sub-title {
-    font-size: 1.25rem;
-  }
-  .logo {
-    font-size: 1.5rem;
-  }
-  .nav-links {
     flex-direction: column;
-    gap: 0.5rem;
     text-align: center;
+    gap: 1rem;
+    padding: 1.75rem 6%;
   }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
+}
+
+/* ============================================================
+   SWITCH TO HAMBURGER  (≤ 1000px)
+   ============================================================ */
+@media screen and (max-width: 1000px) {
+  #desktop-nav  { display: none; }
+  #hamburger-nav { display: flex; }
+}
+
+/* ============================================================
+   MOBILE LANDSCAPE / SMALL TABLET  (≤ 768px)
+   ============================================================ */
+@media screen and (max-width: 768px) {
+  section { padding: 4rem 5%; }
+
+  /* Hero — stack vertically */
+  #profile {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    padding-top: calc(var(--nav-h) + 2rem);
+  }
+
+  .section__pic-container img {
+    width: 210px;
+    height: 210px;
+  }
+
+  .btn-container { justify-content: center; }
+  #socials-container { justify-content: center; }
+
+  /* About — stack vertically */
+  .section-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .about-pic {
+    width: 100%;
+    max-width: 380px;
+    height: 300px;
+  }
+
+  /* Projects — single column */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Experience timeline — tighten */
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item::before {
+    left: -2rem;
+  }
+
+  /* Contact cards — stack */
+  .contact-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 320px;
     justify-content: center;
   }
-  .section__text__p2 {
-    font-size: 1.25rem;
+}
+
+/* ============================================================
+   MOBILE PORTRAIT  (≤ 480px)
+   ============================================================ */
+@media screen and (max-width: 480px) {
+  .logo { font-size: 1.05rem; }
+
+  .title { font-size: 2.2rem; }
+
+  .section-title { font-size: 1.75rem; }
+
+  .about-containers { flex-direction: column; }
+
+  .skills-grid { grid-template-columns: 1fr; }
+
+  .timeline-item { padding: 1.25rem 1.25rem; }
+
+  .experience-sub-title { font-size: 0.95rem; }
+
+  footer .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
-  .title {
-    font-size: 2rem;
-  }
-  .text-container {
-    text-align: justify;
+
+  #back-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 38px;
+    height: 38px;
   }
 }

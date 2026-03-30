@@ -4,25 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Michael Yoo's Portfolio</title>
+    <title>Michael Yoo — Software Developer</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
+
+    <!-- ======== DESKTOP NAV ======== -->
     <nav id="desktop-nav">
-      <div class="logo">Michael Yoo</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+      <div class="logo">Michael <span>Yoo</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="./assets/MYooResume.pdf" target="_blank" class="nav-resume-btn">Resume</a></li>
+      </ul>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     </nav>
+
+    <!-- ======== HAMBURGER NAV ======== -->
     <nav id="hamburger-nav">
-      <div class="logo">Michael Yoo</div>
+      <div class="logo">Michael <span>Yoo</span></div>
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+      <button id="theme-toggle-mobile" aria-label="Toggle dark mode">🌙</button>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -30,584 +36,336 @@
           <span></span>
         </div>
         <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#about"      onclick="toggleMenu()">About</a></li>
           <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li><a href="#skills"     onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#projects"   onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact"    onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
-    </nav>  
+      </div>
+    </nav>
+
+    <!-- ======== HERO ======== -->
     <section id="profile">
-      <div class="section__pic-container">
+      <div class="section__pic-container reveal">
         <img src="./assets/profile-pic.png" alt="Michael Yoo profile picture" />
       </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I am</p>
+      <div class="section__text reveal">
+        <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Michael Yoo</h1>
-        <p class="section__text__p2">Software Developer</p>
+        <p class="section__text__p2"><span id="typing-text"></span><span id="typing-cursor"></span></p>
         <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/MYooResume.pdf')"
-          >
-            Download Resume
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='#contact'">
-            Contact Info
-          </button>
+          <button class="btn btn-color-2" onclick="window.open('./assets/Michael_Resume.pdf')">Download Resume</button>
+          <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Me</button>
         </div>
         <div id="socials-container">
           <img
             src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
+            alt="LinkedIn"
             class="icon"
             onclick="window.open('https://www.linkedin.com/in/michael-yoo-a58075188/', '_blank')"
           />
           <img
             src="./assets/github.png"
-            alt="My Github profile"
+            alt="GitHub"
             class="icon"
             onclick="window.open('https://github.com/myoo18', '_blank')"
           />
         </div>
       </div>
     </section>
+
+    <!-- ======== ABOUT ======== -->
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
+      <p class="section-label">Get To Know More</p>
+      <h1 class="section-title">About Me</h1>
       <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
+        <div class="section__pic-container reveal">
+          <img src="./assets/about-pic.png" alt="Michael Yoo" class="about-pic" />
         </div>
-        <div class="about-details-container">
+        <div class="about-details-container reveal">
           <div class="about-containers">
             <div class="details-container">
-              <img
-                src="./assets/computer.jpg"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Professional Experience</h3>
-              <p> 1-2 years <br />Software Development</p>
+              <img src="./assets/computer.jpg" alt="Experience" class="icon" />
+              <h3>Experience</h3>
+              <p>2+ years<br />Software Development</p>
             </div>
             <div class="details-container">
-              <img
-                src="./assets/gdub.png"
-                alt="Education icon"
-                class="icon"
-              />
+              <img src="./assets/gdub.png" alt="Education" class="icon" />
               <h3>Education</h3>
-              <p>B.S. Computer Science & Minor in Data Science</p>
+              <p>B.S. Computer Science<br />Minor in Data Science</p>
             </div>
           </div>
           <div class="text-container">
             <p>
-              <p>Ever since I was a kid, my passion for computers started with a deep-seated love for video games. 
-                The thrill of downloading Minecraft mods was more than just a boost to my gaming adventures; it was 
-                a gateway that piqued my interest in the mechanics operating beneath the surface. This initial dive 
-                into computing didn't just fuel hours of entertainment—it transformed a casual pastime into a profound 
-                interest in computer science. That initial spark, along with the exhilaration of uncovering new knowledge, 
-                has been the driving force behind my ongoing eagerness to learn and create within the world of modern technology.
+              Hey, I'm Michael — a software engineer based out of the DC area, currently working out of New Jersey. I recently graduated from George
+              Washington University with a B.S. in Computer Science and a minor in Data Science, and I'm currently
+              working full-time at Apollotech MSI building autonomous systems and defense technology. Before that,
+              I interned at Corsha and KnackWorks, where I got hands-on experience with everything from automated
+              testing infrastructure to cloud-native data pipelines.
+              <br /><br />
+              Outside of work, I'm currently building a baseball analytics tool that pulls live odds from the Odds
+              API and runs expected value analysis on bets and player props. It started as a side project and turned
+              into something I keep coming back to and actively developing. I enjoy the challenge of solving real-world problems
+              with data — finding the edge that isn't obvious until you build the right model to look for it.
+              Whether that's a drone navigating a contested environment or a betting line that hasn't been adjusted
+              yet, the approach is the same: understand the system, find the signal, and act on it. When I'm not
+              doing that, I'm probably following the latest in robotics research or going down some rabbit hole I
+              had no business starting.
+              <br /><br />
+              I'm always open to conversations about autonomous systems, defense tech, or anything at the edge of
+              what software can do. If you think there's a fit or just want to connect, feel free to reach out —
+              I'm always happy to talk.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-
-
-
-
-
-
-<!------------------------------------------------------------------------------- -->
+    <!-- ======== EXPERIENCE ======== -->
     <section id="experience">
-      <p class="section__text__p1">Learn About My Professional</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
+      <p class="section-label">Professional</p>
+      <h1 class="section-title">Experience</h1>
+      <div class="timeline">
 
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Student Research Specialist III - George Washington University</h2>
-            <p class="experience-dates">September 2024 - Present</p>
-            <ul class="experience-highlights">
-              <li>
-                Leading the development of a database as the sole technical contributor to catalog images of flags with mourning quotes placed at the Washington Memorial by families affected by COVID-19.
-              </li>
-              <li>
-                Transcribing and structuring mourning messages into a standardized format using SQL, enhancing the accessibility and long-term preservation of these cultural artifacts for historical research.
-              </li>
-              <li>
-                Identifying trends in visual and textual data to inform ongoing studies on public mourning practices.
-              </li>
-              <li>
-                Providing technical expertise, ensuring the database meets academic research and archival standards.
-              </li>
-              <li>
-                Collaborating with non-technical team members to translate project needs into practical technical solutions.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Software Engineering Intern - Corsha</h2>
-            <p class="experience-dates">May 2024 - August 2024</p>
-            <ul class="experience-highlights">
-              <li>
-                Optimized the Corsha automated testing suite by replacing custom methods with standardized tools, resolving 10+ recurring test failures, and improving reliability.
-              </li>
-              <li>
-                Increased testing efficiency by implementing environment reuse, saving 40% of testing time, which reduced test cycles and allowed engineers to focus on feature development.
-              </li>
-              <li>
-                Integrated Sonarqube for automated code reviews, ensuring early detection of issues and maintaining high code quality standards.
-              </li>
-              <li>
-                Utilized Ansible, Kubernetes, and GoLang for deployment automation and testing coverage.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Software Engineering Intern - KnackWorks</h2>
-            <p class="experience-dates">May 2023 - August 2023</p>
-            <ul class="experience-highlights">
-              <li>
-                Improved data accessibility and visualization on the DaaS project using GoLang, Python, Kubernetes, ELK, and Kafka, achieving a 25% faster query response time.
-              </li>
-              <li>
-                Deployed Logstash in Kubernetes for PostgreSQL-to-Elasticsearch migration.
-              </li>
-              <li>
-                Developed a GoLang service with an AWS S3-compatible storage endpoint, cutting data retrieval times by 15% and optimizing cloud storage efficiency.
-              </li>
-              <li>
-                Collaborated with stakeholders in agile sprints, ensuring that technical solutions aligned with project goals and customer needs, demonstrating strong teamwork and communication.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-
-<!-- ----------------------------------------------------------------------------------------------- -->
-
-    <section id="skills">
-      <p class="section__text__p1">Take a Look at My</p>
-      <h1 class="title">Technical Skills</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <!-- Programming Languages Container -->
-          <div class="details-container">
-            <h2 class="experience-sub-title">Programming Languages</h2>
-            <div class="article-container">
-
-              <article>
-                <img src="./assets/java-logo.jpg" alt="Java icon" class="icon" />
-                <div>
-                  <h3>Java</h3>
-                  <div class="experience-level"><p>Experienced</p></div>
-                  <div class="experience-bar experienced"></div>
-                </div>
-              </article>
-
-              <article>
-                <img src="./assets/python-logo.png" alt="python icon" class="icon" />
-                <div>
-                  <h3>Python</h3>
-                  <div class="experience-level"><p>Experienced</p></div>
-                  <div class="experience-bar experienced"></div>
-                </div>
-              </article>
-
-              <article>
-                <img src="./assets/c-logo.png" alt="c icon" class="icon" />
-                <div>
-                  <h3>C</h3>
-                  <div class="experience-level"><p>Experienced</p></div>
-                  <div class="experience-bar experienced"></div>
-                </div>
-              </article>
-
-              <article>
-                <img src="./assets/go-logo.png" alt="go icon" class="icon" />
-                <div>
-                  <h3>GoLang</h3>
-                  <div class="experience-level"><p>Intermediate</p></div>
-                  <div class="experience-bar intermediate"></div>
-                </div>
-              </article>
-
-              <article>
-                <img src="./assets/html-logo.png" alt="HTML icon" class="icon" />
-                <div>
-                  <h3>HTML</h3>
-                  <div class="experience-level"><p>Experienced</p></div>
-                  <div class="experience-bar experienced"></div>
-                </div>
-              </article>
-
-              <article>
-                <img src="./assets/css-logo.png" alt="CSS icon" class="icon" />
-                <div>
-                  <h3>CSS</h3>
-                  <div class="experience-level"><p>Experienced</p></div>
-                  <div class="experience-bar experienced"></div>
-                </div>
-              </article>
-
-              <article>
-                <img src="./assets/js-logo.png" alt="js icon" class="icon" />
-                <div>
-                  <h3>JavaScript</h3>
-                  <div class="experience-level"><p>Intermediate</p></div>
-                  <div class="experience-bar intermediate"></div>
-                </div>
-              </article>
-
-              <article>
-                <img src="./assets/sql-logo.png" alt="sql icon" class="icon" />
-                <div>
-                  <h3>SQL</h3>
-                  <div class="experience-level"><p>Experienced</p></div>
-                  <div class="experience-bar experienced"></div>
-                </div>
-              </article>
-              
-
-            </div>
-          </div>
-          <!-- Tools & Technologies Container -->
-          <div class="details-container">
-            <h2 class="experience-sub-title">Tools & Technologies</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/git-logo.png" alt="Git icon" class="icon" />
-                <div>
-                  <h3>Git</h3>
-                  <div class="experience-level"><p>Experienced</p></div>
-                  <div class="experience-bar experienced"></div>
-                </div>
-              </article>
-
-              <article>
-                <img src="./assets/linux-logo.png" alt="linux icon" class="icon" />
-                <div>
-                  <h3>Linux</h3>
-                  <div class="experience-level"><p>Experienced</p></div>
-                  <div class="experience-bar experienced"></div>
-                </div>
-              </article>
-
-              <article>
-                <img src="./assets/docker-logo.png" alt="Docker icon" class="icon" />
-                <div>
-                  <h3>Docker</h3>
-                  <div class="experience-level"><p>Intermediate</p></div>
-                  <div class="experience-bar intermediate"></div>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/kube-logo.png" alt="Kubernetes icon" class="icon" />
-                <div>
-                  <h3>Kubernetes</h3>
-                  <div class="experience-level"><p>Experienced</p></div>
-                  <div class="experience-bar experienced"></div>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/postgresql-logo.png" alt="PostgreSQL icon" class="icon" />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <div class="experience-level"><p>Intermediate</p></div>
-                  <div class="experience-bar intermediate"></div>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/mongo-logo.jpg" alt="MongoDB icon" class="icon" />
-                <div>
-                  <h3>MongoDB</h3>
-                  <div class="experience-level"><p>Experienced</p></div>
-                  <div class="experience-bar experienced"></div>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/aws-logo.png" alt="aws icon" class="icon" />
-                <div>
-                  <h3>AWS</h3>
-                  <div class="experience-level"><p>Experienced</p></div>
-                  <div class="experience-bar experienced"></div>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/azure-logo.png" alt="azure icon" class="icon" />
-                <div>
-                  <h3>Azure</h3>
-                  <div class="experience-level"><p>Intermediate</p></div>
-                  <div class="experience-bar intermediate"></div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      
-      <div id="first-set-of-projects" class="project-set">
-        <button class="slider-arrow left-arrow" onclick="toggleProjects()">❮</button>
-        <button class="slider-arrow right-arrow" onclick="toggleProjects()">❯</button>
-
-        <div class="experience-details-container">
-          <div class="about-containers">
-            
-            <div class="details-container color-container">
-              <div class="article-container">
-                <img
-                  src="./assets/directory-search-proj.png"
-                  alt="Directory Search Engine"
-                  class="project-img"
-                />
-              </div>
-              <h2 class="experience-sub-title project-title">Directory Search Engine</h2>
-              <div class="coding-language-container">
-                <img src="./assets/c-logo.png" alt="Language Logo" class="icon"/>
-              </div>
-              <div class="btn-container">
-                <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/myoo18/Directory-Search-Engine', '_blank')">Github</button>
-                <button class="btn btn-color-1 description-btn" data-description="When the program begins, it sets up a Hashmap to efficiently store and access data. 
-                The user decides how big this structure should be.||The program fills this hashmap with information from a bunch of files in a specific directory. It doesn't matter 
-                how many files there are, thanks to a tool called glob_t that handles the file counting.||Once the training is done, the program waits for the user to type in some 
-                keywords they want to search for. The program will keep running until the user decides to stop it by pressing 'X'.||When the user enters a search query, 
-                the program looks through the hashmap to find and rank the documents based on how relevant they are to the query. The ranking is done using a method called tf-idf 
-                (term frequency-inverse document frequency), which helps determine how important a word is in a document compared to a collection of documents.||
-                The ranked list of documents is then saved to a new file called search_scores.txt, with the most relevant document at the top and the least relevant at the bottom.||
-                Once the user is done and presses 'X', the program makes sure to free up any memory it used and gets rid of the hashmap structure before closing.">Description</button>
-              </div>
-            </div>
-
-            <div class="details-container color-container">
-              <div class="article-container">
-                <img
-                  src="./assets/gwackslack.jpg"
-                  alt="Directory Search Engine"
-                  class="project-img"
-                />
-              </div>
-              <h2 class="experience-sub-title project-title">GWack Slack Simulator</h2>
-              <div class="coding-language-container">
-                <img src="./assets/java-logo.jpg" alt="Language Logo" class="icon"/>
-              </div>
-              <div class="btn-container">
-                <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/myoo18/GWack-Slack-Simulator', '_blank')">Github</button>
-                <button class="btn btn-color-1 description-btn" data-description="The GWack Slack Simulator is a Java and Swing-based chat application showcasing real-time messaging with a client-server 
-                architecture.||It offers four themes - light mode, dark mode, a 'sun in your eyes' theme, and an 'RGX' theme inspired by Valorant weapon skins, switchable via a dropdown 
-                menu.||Utilizes object-oriented programming principles, threading for concurrent operations, and interactive UI elements through item and key listeners.||
-                The GWackClientGUI class, extending JFrame, handles theme changes through ItemListener. Concurrently, the Client class manages connections as a Thread and uses KeyListener for message sending 
-                via the enter key.||To provide an engaging and customizable chat experience, enabling users to interact and change themes according to their preferences.">Description</button>
-            </div>
-            </div>
-
-            
-            <div class="details-container color-container">
-              <div class="article-container">
-                <img
-                  src="./assets/shoppincart.png"
-                  alt="Directory Search Engine"
-                  class="project-img"
-                />
-              </div>
-              <h2 class="experience-sub-title project-title">Shopping cart WebApp</h2>
-              <div class="coding-language-container">
-                <img src="./assets/sql-logo.png" alt="Language Logo" class="icon"/>
-                <img src="./assets/python-logo.png" alt="Language Logo" class="icon"/>
-              </div>
-              <div class="btn-container">
-                <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/myoo18/Shopping-Cart-WebApp', '_blank')">Github</button>
-                <button class="btn btn-color-1 description-btn" data-description="Product Display Showcases products in various categories with their quantity and price visible.||Search Functionality feature 
-                enables item searches by name or category browsing.||User Authentication feature will restrict shopping cart functions to logged-in users only. A demo account ('testuser' with 'testpass') is provided for 
-                testing.||The shopping cart Allows users to manage their cart with session variables, not stored in the database.||Checkout Process reduces item quantity in the database upon checkout to reflect 
-                transactions.||Users can view past orders, including item lists and total costs.||Database Management: Utilizes a structured database for table management, with a Python 
-                'fill' script for database maintenance.||Input Validation is enabled to ensure input is valid to prevent negative or oversized purchases.||Features a straightforward design 
-                with basic styling and functionality.">Description</button>
-              </div>
-            </div>
-
-            
-          </div>
-        </div>
-      </div>
-      
-      <div id="second-set-of-projects" class="project-set" style="display: none;">
-        <button class="slider-arrow left-arrow" onclick="toggleProjects()">❮</button>
-        <button class="slider-arrow right-arrow" onclick="toggleProjects()">❯</button>
-        <div class="experience-details-container">
-          <div class="about-containers">
-            
-            <div class="details-container color-container">
-              <div class="article-container">
-                <img
-                  src="./assets/xv6.png"
-                  alt="xv6"
-                  class="project-img"
-                />
-              </div>
-              <h2 class="experience-sub-title project-title">xv6 Container Manager</h2>
-              <div class="coding-language-container">
-                <img src="./assets/c-logo.png" alt="Language Logo" class="icon"/>
-              </div>
-              <div class="btn-container">
-                <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/myoo18/xv6-container-mngmnt', '_blank')">Github</button>
-                <button class="btn btn-color-1 description-btn" data-description="This project involves implementing a container management system 
-                in the xv6 operating system, similar to Docker's functionality. The goal is to create isolated environments called containers, each with its own subset of the file 
-                system and limited system resources.||The system includes a Container Manager (CM) to handle requests for creating and managing containers, which 
-                are defined using a simple JSON format. Containers are restricted in terms of the number of processes they can create and the system resources they can access.|| 
-                The project also involves adding support for shared memory, synchronization mechanisms, and a hierarchical scheduling system to prioritize container and system processes.||This project provides hands-on 
-                experience with kernel-level programming.">Description</button>
-              </div>
-            </div>
-
-            <div class="details-container color-container">
-              <div class="article-container">
-                <img
-                  src="./assets/aac.png"
-                  alt="aac"
-                  class="project-img"
-                />
-              </div>
-              <h2 class="experience-sub-title project-title">Affordable AAC</h2>
-              <div class="coding-language-container">
-                <img src="./assets/python-logo.png" alt="Language Logo" class="icon"/>
-                <img src="./assets/mongo-logo.jpg" alt="Language Logo" class="icon"/>
-                <img src="./assets/html-logo.png" alt="Language Logo" class="icon"/>
-                <img src="./assets/css-logo.png" alt="Language Logo" class="icon"/>
-                <img src="./assets/js-logo.png" alt="Language Logo" class="icon"/>
-              </div>
-              <div class="btn-container">
-                <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/myoo18/Affordable-AAC', '_blank')">Github</button>
-                <button class="btn btn-color-1 description-btn" data-description="The AAC project originated from a collaborative effort between myself and a group of friends during a Hackathon in 
-                the fall of 2023. Our primary motivation was to address the communication challenges faced by individuals with speech impairments. We recognized the potential of leveraging natural language 
-                processing technologies to create a solution that could assist users in forming coherent and grammatically correct sentences.||Training: The program fills this hashmap with information from a 
-                bunch of files in a specific directory. ||The current AAC system employs Spacy, an open-source NLP library, for initial text processing and linguistic analysis. To enhance the accuracy of 
-                sentence formation, we integrated Grammarly's Coedit-large model, which is adept at correcting grammatical errors. The combination of these models allows our system to interpret user input, 
-                even if it is fragmented or grammatically incorrect, and transform it into a readable English sentence.||This approach differs from traditional AAC systems, which often rely on predefined phrases 
-                or basic word prediction algorithms. By incorporating advanced NLP models, our system can adapt to the unique needs of each user, providing more personalized and contextually appropriate 
-                communication support.">Description</button>
-              </div>
-            </div>
-
-            
-            <div class="details-container color-container">
-              <div class="article-container">
-                <img
-                  src="./assets/args.png"
-                  alt="Directory Search Engine"
-                  class="project-img"
-                />
-              </div>
-              <h2 class="experience-sub-title project-title">ARGS University System</h2>
-              <div class="coding-language-container">
-                <img src="./assets/python-logo.png" alt="Language Logo" class="icon"/>
-                <img src="./assets/sql-logo.png" alt="Language Logo" class="icon"/>
-                <img src="./assets/html-logo.png" alt="Language Logo" class="icon"/>
-                <img src="./assets/css-logo.png" alt="Language Logo" class="icon"/>
-                <img src="./assets/aws-logo.png" alt="Language Logo" class="icon"/>
-              </div>
-              
-              <div class="btn-container">
-                <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/myoo18/ARGS-University-System', '_blank')">Github</button>
-                <button class="btn btn-color-1 description-btn" data-description="The objective of this project was to merge three distinct systems (APPS, REGS, ADS) into a unified project. 
-                ||The primary goal was to consolidate the workflows and integrate diverse schemas across the systems.|| The database is connected to a free student AWS server.
-                ||The APPS system provides an online application and admission review system for students seeking admission to the graduate programs (Masters and PhD degrees).
-                ||The REGS system provides a course registration system.
-                ||The ADS (Advising System, much like DegreeMap) provides functions that help with advising and graduation requirements.">Description</button>
-              </div>
-            </div>
-
-            
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-
-
-
-    
-    <section id="contact">
-      <p class="section__text__p1">If You Want to Get in Touch,</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:mjyoo18@gmail.com">mjyoo18@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/michael-yoo-a58075188/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-
-
-
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <div class="timeline-item reveal">
+          <h2 class="experience-sub-title">Software Engineer — Apollotech MSI</h2>
+          <span class="experience-dates">July 2025 – Present</span>
+          <ul class="experience-highlights">
+            <li>Architected high-fidelity drone swarm simulation environments using PyBullet, Gazebo, and PX4 to develop and validate coordinated autonomous behaviors; led full autonomy stack transition to physical hardware for live stakeholder demonstrations.</li>
+            <li>Served as Software Lead for a mission-critical decision-support system, owning algorithms for multi-source data fusion, tracking, and classification in contested, dynamic environments.</li>
+            <li>Drove requirements definition and technical alignment across integrated product teams, delivering through design reviews and technical reports.</li>
+            <li>Supported deployment and on-site testing of real-time systems, diagnosing and resolving performance and reliability issues in operational environments.</li>
+            <li>Contributed to competitive technical proposals, designing scalable software architectures for autonomous and real-time defense systems.</li>
           </ul>
         </div>
+
+        <div class="timeline-item reveal">
+          <h2 class="experience-sub-title">Student Research Specialist III — George Washington University</h2>
+          <span class="experience-dates">September 2024 – Present</span>
+          <ul class="experience-highlights">
+            <li>Leading development of a database as the sole technical contributor to catalog images of flags with mourning quotes placed at the Washington Memorial by families affected by COVID-19.</li>
+            <li>Transcribing and structuring mourning messages into a standardized format using SQL, enhancing accessibility and long-term preservation of these cultural artifacts.</li>
+            <li>Identifying trends in visual and textual data to inform ongoing studies on public mourning practices.</li>
+            <li>Collaborating with non-technical team members to translate project needs into practical technical solutions.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item reveal">
+          <h2 class="experience-sub-title">Software Engineering Intern — Corsha</h2>
+          <span class="experience-dates">May 2024 – August 2024</span>
+          <ul class="experience-highlights">
+            <li>Optimized the automated testing suite by replacing custom methods with standardized tools, resolving 10+ recurring test failures and improving reliability.</li>
+            <li>Increased testing efficiency by implementing environment reuse, saving 40% of testing time and allowing engineers to focus on feature development.</li>
+            <li>Integrated SonarQube for automated code reviews, ensuring early detection of issues and maintaining high code quality standards.</li>
+            <li>Utilized Ansible, Kubernetes, and GoLang for deployment automation and testing coverage.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item reveal">
+          <h2 class="experience-sub-title">Software Engineering Intern — KnackWorks</h2>
+          <span class="experience-dates">May 2023 – August 2023</span>
+          <ul class="experience-highlights">
+            <li>Improved data accessibility and visualization on the DaaS project using GoLang, Python, Kubernetes, ELK, and Kafka, achieving a 25% faster query response time.</li>
+            <li>Deployed Logstash in Kubernetes for PostgreSQL-to-Elasticsearch migration.</li>
+            <li>Developed a GoLang service with an AWS S3-compatible storage endpoint, cutting data retrieval times by 15%.</li>
+            <li>Collaborated with stakeholders in agile sprints, ensuring technical solutions aligned with project goals.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======== SKILLS ======== -->
+    <section id="skills">
+      <p class="section-label">Expertise</p>
+      <h1 class="section-title">Technical Skills</h1>
+      <div class="skills-grid">
+
+        <div class="skills-category reveal">
+          <h2>Programming Languages</h2>
+          <div class="skill-tags">
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"           alt="Java">Java</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"       alt="Python">Python</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"                 alt="C">C</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">C++</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"               alt="Go">GoLang</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"         alt="HTML">HTML</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"           alt="CSS">CSS</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">JavaScript</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"         alt="SQL">SQL</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg"                 alt="R">R</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"             alt="PHP">PHP</span>
+          </div>
+        </div>
+
+        <div class="skills-category reveal">
+          <h2>Tools &amp; Technologies</h2>
+          <div class="skill-tags">
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"                                          alt="Git">Git</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"                                      alt="Linux">Linux</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"                                    alt="Docker">Docker</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"                               alt="Kubernetes">Kubernetes</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"                            alt="PostgreSQL">PostgreSQL</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"                                  alt="MongoDB">MongoDB</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"         alt="AWS">AWS</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"                                      alt="Azure">Azure</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"                          alt="GCP">GCP</span>
+            <span class="skill-tag">ArcGIS</span>
+            <span class="skill-tag">MAVLink</span>
+            <span class="skill-tag">PX4</span>
+            <span class="skill-tag">ArduPilot</span>
+          </div>
+        </div>
+
+        <div class="skills-category reveal" style="grid-column: 1 / -1;">
+          <h2>Frameworks &amp; Libraries</h2>
+          <div class="skill-tags">
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elastic Stack">Elastic Stack</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"               alt="Node.js">Node.js</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"                 alt="Flask">Flask</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg"     alt="Kafka">Apache Kafka</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ros/ros-original.svg"                     alt="ROS">ROS</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"               alt="OpenCV">OpenCV</span>
+            <span class="skill-tag">PyBullet</span>
+            <span class="skill-tag">Gazebo</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======== PROJECTS ======== -->
+    <section id="projects">
+      <p class="section-label">Work</p>
+      <h1 class="section-title">Projects</h1>
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-img-wrap project-img-banner">
+            <span>Raytheon AVC</span>
+          </div>
+          <div class="project-card-body">
+            <h2 class="project-title">Raytheon Autonomous Vehicle Competition</h2>
+            <div class="coding-language-container">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" />
+            </div>
+            <p class="project-description">Developed a multi-drone autonomous system using Python and MAVLink to coordinate a swarm search of a defined area, culminating in precision package delivery to a designated target identified via ArUco marker detection with OpenCV computer vision.</p>
+            <div class="project-card-footer">
+              <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/myoo18/Raytheon-AVC', '_blank')">GitHub</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img-wrap project-img-banner">
+            <span>Predictive Baseball Model</span>
+          </div>
+          <div class="project-card-body">
+            <h2 class="project-title">Predictive Baseball Model</h2>
+            <div class="coding-language-container">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+            </div>
+            <p class="project-description">Pulls live MLB sports betting odds from the Odds API and runs expected value analysis on bets and player props, helping identify statistically favorable positions across sportsbooks. Combines statistical modeling with real-time market data to surface edges before game time.</p>
+            <div class="project-card-footer">
+              <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/myoo18/pbm', '_blank')">GitHub</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img-wrap">
+            <img src="./assets/xv6.png" alt="xv6 Container Manager" class="project-img" />
+          </div>
+          <div class="project-card-body">
+            <h2 class="project-title">xv6 Container Manager</h2>
+            <div class="coding-language-container">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" />
+            </div>
+            <p class="project-description">Built a Docker-inspired container management system directly in the xv6 OS kernel, implementing isolated environments with resource limits, shared memory, and a hierarchical process scheduler. Hands-on kernel-level programming in C with real systems constraints.</p>
+            <div class="project-card-footer">
+              <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/myoo18/xv6-container-mngmnt', '_blank')">GitHub</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img-wrap">
+            <img src="./assets/gwackslack.jpg" alt="GWack Slack Simulator" class="project-img" />
+          </div>
+          <div class="project-card-body">
+            <h2 class="project-title">GWack Slack Simulator</h2>
+            <div class="coding-language-container">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+            </div>
+            <p class="project-description">A multithreaded client-server chat application built in Java with a custom Swing GUI, supporting real-time messaging, live member list updates, and four switchable UI themes. Demonstrates concurrent programming, socket communication, and OOP design.</p>
+            <div class="project-card-footer">
+              <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/myoo18/GWack-Slack-Simulator', '_blank')">GitHub</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img-wrap">
+            <img src="./assets/args.png" alt="ARGS University System" class="project-img" />
+          </div>
+          <div class="project-card-body">
+            <h2 class="project-title">ARGS University System</h2>
+            <div class="coding-language-container">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"                                  alt="Python" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"                                     alt="SQL" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"                                     alt="HTML" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"                                       alt="CSS" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"        alt="AWS" />
+            </div>
+            <p class="project-description">Integrated three separate university systems — admissions, course registration, and academic advising — into a single full-stack web platform backed by AWS. Consolidated schemas from multiple databases into a unified SQL architecture.</p>
+            <div class="project-card-footer">
+              <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/myoo18/ARGS-University-System', '_blank')">GitHub</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======== CONTACT ======== -->
+    <section id="contact">
+      <div class="contact-inner reveal">
+        <p class="section-label">Get In Touch</p>
+        <h1 class="section-title">Contact Me</h1>
+        <p>I'm currently open to new opportunities. Whether you have a question or just want to say hi — my inbox is always open.</p>
+        <div class="contact-cards">
+          <a href="mailto:mjyoo18@gmail.com" class="contact-card">
+            <img src="./assets/email.png" alt="Email" />
+            mjyoo18@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/michael-yoo-a58075188/" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <img src="./assets/linkedin.png" alt="LinkedIn" />
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer>
+      <p class="footer-copyright">© 2025 Michael Yoo</p>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
     </footer>
 
+    <!-- ======== BACK TO TOP ======== -->
+    <button id="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
     <script src="script.js"></script>
-    <div id="projectModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 id="modalTitle">Project Title</h2>
-        <p id="modalDescription"> </p>
-      </div>
-    </div>
-<!-- todo is finish projects -->
   </body>
 </html>
